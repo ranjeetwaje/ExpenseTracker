@@ -38,9 +38,11 @@ class ExpenseListAdapter(private val clickListener: (WealthManagementEntity) -> 
 class MyViewHolder(var binding: ListItemViewBinding): RecyclerView.ViewHolder(binding.root) {
 
     fun bind(wealthManagementEntity: WealthManagementEntity, clickListener: (WealthManagementEntity) -> Unit) {
-        binding.nameTextView.text = wealthManagementEntity.expenseType + " on " + wealthManagementEntity.expenseDate
-        binding.spendingTextView.text = "Rs. " + wealthManagementEntity.expenseAmount
-        binding.placeTextView.text = "Place: "+ wealthManagementEntity.expensePlace
+        binding.categoryTextView.text = wealthManagementEntity.category
+        binding.expenseTypeTextView.text = wealthManagementEntity.expenseType
+        binding.amountTransactionTypeDateTextview.text = "Rs."+ wealthManagementEntity.expenseAmount + " by " +
+                wealthManagementEntity.transactionType + " on " + wealthManagementEntity.expenseDate
+        binding.noteTextView.text = wealthManagementEntity.note
 
         binding.listItemLayout.setOnClickListener {
             clickListener(wealthManagementEntity)

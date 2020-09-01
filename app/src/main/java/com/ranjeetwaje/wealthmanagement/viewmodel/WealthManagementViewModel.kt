@@ -1,5 +1,6 @@
 package com.ranjeetwaje.wealthmanagement.viewmodel
 
+import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.LiveData
@@ -28,6 +29,12 @@ class WealthManagementViewModel(private val repository: WealthManagementReposito
     private val _message = MutableLiveData<Event<String>>()
     val message: MutableLiveData<Event<String>>
         get() = _message
+
+    @Bindable
+    val categoryId = MutableLiveData<Int>()
+
+    @Bindable
+    val transactionId = MutableLiveData<Int>()
 
     @Bindable
     val expenseType = MutableLiveData<String>()
@@ -65,7 +72,7 @@ class WealthManagementViewModel(private val repository: WealthManagementReposito
         viewModelScope.launch {
             repository.deleteTransactionTypes()
         }
-        val transactionType = arrayOf("Cash", "UPI", "Net Banking", "Credit card", "Debit Card")
+        val transactionType = arrayOf("Select Transaction Type", "Cash", "UPI", "Net Banking", "Credit card", "Debit Card")
         for (i in transactionType.indices) {
             insertTransactionTypes(
                 TransactionTypeEntity(0, transactionType[i])
@@ -77,7 +84,7 @@ class WealthManagementViewModel(private val repository: WealthManagementReposito
         viewModelScope.launch {
             repository.deleteCategories()
         }
-        val categories = arrayOf("Automobiles", "Education")
+        val categories = arrayOf("Select Category","Automobiles", "Education")
         for (i in categories.indices) {
             insertCategory(
                 CategoryOptionEntity(0, categories[i])
@@ -87,13 +94,20 @@ class WealthManagementViewModel(private val repository: WealthManagementReposito
 
 
     fun insert() {
-        if (expenseType.value.isNullOrEmpty() && expensePlace.value.isNullOrEmpty() && expenseAmount.value.isNullOrEmpty()) {
-            _message.value = Event("Please enter Expense Type, Place and amount")
+        val selectedCategoryId = categoryId.value!!
+        val selectedCategory = categoryList.value!![selectedCategoryId]
+        val selectedTransactionTypesId = transactionId.value!!
+        val selectedTransactionTypes = transactionTypes.value!![selectedTransactionTypesId]
+
+        if (expenseType.value.isNullOrEmpty() && expensePlace.value.isNullOrEmpty() && expenseAmount.value.isNullOrEmpty()
+            && selectedCategory.category != "Select Category" && selectedTransactionTypes.transaction_type != "Select Transaction Type") {
+            _message.value = Event("Please enter valid values")
         } else {
             val currentDate = Date().toString()
             insert(
                 WealthManagementEntity(0, getExpenseType(), "",
-                    expenseAmount.value!!, transactionDate.value!!, category.value!!, transactionType.value!!, note.value!!)
+                    expenseAmount.value!!, transactionDate.value!!,
+                    selectedCategory.category, selectedTransactionTypes.transaction_type, note.value!!)
             )
 
         }
@@ -129,17 +143,16 @@ class WealthManagementViewModel(private val repository: WealthManagementReposito
     }
 
     private fun getExpenseType(): String {
-        return when {
-            expenseRadioChecked.value!! -> {
-                "Expense"
+
+        when {
+            expenseRadioChecked.value != null -> {
+                if (expenseRadioChecked.value!!) { return "Expense" }
             }
-            incomeRadioChecked.value!! -> {
-                "Income"
-            }
-            else -> {
-                "Expense"
+            incomeRadioChecked.value != null -> {
+                if (incomeRadioChecked.value!!) { return "Income" }
             }
         }
+        return "Expense"
     }
 
     override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {
