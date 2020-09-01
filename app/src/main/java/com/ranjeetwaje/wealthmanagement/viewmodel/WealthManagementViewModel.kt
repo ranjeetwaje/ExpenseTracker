@@ -1,6 +1,8 @@
 package com.ranjeetwaje.wealthmanagement.viewmodel
 
-import android.util.Log
+import android.app.DatePickerDialog
+import android.app.DatePickerDialog.OnDateSetListener
+import android.content.Context
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.LiveData
@@ -15,7 +17,8 @@ import com.ranjeetwaje.wealthmanagement.utils.Event
 import kotlinx.coroutines.launch
 import java.util.*
 
-class WealthManagementViewModel(private val repository: WealthManagementRepository): ViewModel(),
+
+class WealthManagementViewModel(private val repository: WealthManagementRepository, val contenxt: Context): ViewModel(),
     Observable {
 
     val expenseList = repository.expenseList
@@ -153,6 +156,30 @@ class WealthManagementViewModel(private val repository: WealthManagementReposito
             }
         }
         return "Expense"
+    }
+
+    fun selectDate() {
+        val mYear: Int
+        val mMonth: Int
+        val mDay: Int
+
+        val c = Calendar.getInstance()
+        mYear = c[Calendar.YEAR]
+        mMonth = c[Calendar.MONTH]
+        mDay = c[Calendar.DAY_OF_MONTH]
+
+
+        val datePickerDialog = DatePickerDialog(
+            contenxt,
+            OnDateSetListener { view, year, monthOfYear,
+                                dayOfMonth -> (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year)
+                transactionDate.value = (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year)
+            },
+            mYear,
+            mMonth,
+            mDay
+        )
+        datePickerDialog.show()
     }
 
     override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {

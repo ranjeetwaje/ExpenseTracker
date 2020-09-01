@@ -47,7 +47,7 @@ class IncomeExpenseFragment : Fragment() {
     }
 
     private val wealthManagementViewModel: WealthManagementViewModel by lazy {
-        ViewModelProvider(this, WealthManagementViewModelFactory(repository))
+        ViewModelProvider(this, WealthManagementViewModelFactory(repository, this.requireActivity()))
             .get(WealthManagementViewModel::class.java)
     }
 

@@ -11,7 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="925ddd82-0842-4b77-bd96-eb56aeada5b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/rw11009.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
@@ -22,13 +21,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ranjeetwaje/wealthmanagement/adapter/ExpenseListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ranjeetwaje/wealthmanagement/adapter/ExpenseListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ranjeetwaje/wealthmanagement/ui/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ranjeetwaje/wealthmanagement/ui/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ranjeetwaje/wealthmanagement/ui/IncomeExpenseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ranjeetwaje/wealthmanagement/ui/IncomeExpenseFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ranjeetwaje/wealthmanagement/viewmodel/WealthManagementViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ranjeetwaje/wealthmanagement/viewmodel/WealthManagementViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ranjeetwaje/wealthmanagement/viewmodelfactory/WealthManagementViewModelFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ranjeetwaje/wealthmanagement/viewmodelfactory/WealthManagementViewModelFactory.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_income_expense.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_income_expense.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +73,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="memory.settings.postsync.last.time.stamp" value="1598889280702" />
+    <property name="memory.settings.postsync.last.time.stamp" value="1598984562717" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -211,45 +209,45 @@
     </state>
     <state x="213" y="143" width="1199" height="787" key="DiffContextDialog/0.23.1620.1027@0.23.1620.1027" timestamp="1598982624505" />
     <state x="213" y="143" width="1200" height="787" key="DiffContextDialog/0.23.1622.1027@0.23.1622.1027" timestamp="1598949931865" />
-    <state width="1358" height="329" key="GridCell.Tab.0.bottom" timestamp="1598983739239">
+    <state width="1358" height="329" key="GridCell.Tab.0.bottom" timestamp="1598984147774">
       <screen x="0" y="23" width="1620" height="1027" />
     </state>
-    <state width="1358" height="329" key="GridCell.Tab.0.bottom/0.23.1620.1027@0.23.1620.1027" timestamp="1598983739239" />
+    <state width="1358" height="329" key="GridCell.Tab.0.bottom/0.23.1620.1027@0.23.1620.1027" timestamp="1598984147774" />
     <state width="1358" height="225" key="GridCell.Tab.0.bottom/0.23.1622.1027@0.23.1622.1027" timestamp="1598977507218" />
-    <state width="1358" height="329" key="GridCell.Tab.0.center" timestamp="1598983739239">
+    <state width="1358" height="329" key="GridCell.Tab.0.center" timestamp="1598984147773">
       <screen x="0" y="23" width="1620" height="1027" />
     </state>
-    <state width="1358" height="329" key="GridCell.Tab.0.center/0.23.1620.1027@0.23.1620.1027" timestamp="1598983739239" />
+    <state width="1358" height="329" key="GridCell.Tab.0.center/0.23.1620.1027@0.23.1620.1027" timestamp="1598984147773" />
     <state width="1358" height="225" key="GridCell.Tab.0.center/0.23.1622.1027@0.23.1622.1027" timestamp="1598977507218" />
-    <state width="1358" height="329" key="GridCell.Tab.0.left" timestamp="1598983739239">
+    <state width="1358" height="329" key="GridCell.Tab.0.left" timestamp="1598984147773">
       <screen x="0" y="23" width="1620" height="1027" />
     </state>
-    <state width="1358" height="329" key="GridCell.Tab.0.left/0.23.1620.1027@0.23.1620.1027" timestamp="1598983739239" />
+    <state width="1358" height="329" key="GridCell.Tab.0.left/0.23.1620.1027@0.23.1620.1027" timestamp="1598984147773" />
     <state width="1358" height="225" key="GridCell.Tab.0.left/0.23.1622.1027@0.23.1622.1027" timestamp="1598977507217" />
-    <state width="1358" height="329" key="GridCell.Tab.0.right" timestamp="1598983739239">
+    <state width="1358" height="329" key="GridCell.Tab.0.right" timestamp="1598984147773">
       <screen x="0" y="23" width="1620" height="1027" />
     </state>
-    <state width="1358" height="329" key="GridCell.Tab.0.right/0.23.1620.1027@0.23.1620.1027" timestamp="1598983739239" />
+    <state width="1358" height="329" key="GridCell.Tab.0.right/0.23.1620.1027@0.23.1620.1027" timestamp="1598984147773" />
     <state width="1358" height="225" key="GridCell.Tab.0.right/0.23.1622.1027@0.23.1622.1027" timestamp="1598977507218" />
-    <state width="1358" height="329" key="GridCell.Tab.1.bottom" timestamp="1598983771359">
+    <state width="1358" height="329" key="GridCell.Tab.1.bottom" timestamp="1598984147775">
       <screen x="0" y="23" width="1620" height="1027" />
     </state>
-    <state width="1358" height="329" key="GridCell.Tab.1.bottom/0.23.1620.1027@0.23.1620.1027" timestamp="1598983771359" />
+    <state width="1358" height="329" key="GridCell.Tab.1.bottom/0.23.1620.1027@0.23.1620.1027" timestamp="1598984147775" />
     <state width="1358" height="329" key="GridCell.Tab.1.bottom/0.23.1622.1027@0.23.1622.1027" timestamp="1598976949883" />
-    <state width="1358" height="329" key="GridCell.Tab.1.center" timestamp="1598983771358">
+    <state width="1358" height="329" key="GridCell.Tab.1.center" timestamp="1598984147774">
       <screen x="0" y="23" width="1620" height="1027" />
     </state>
-    <state width="1358" height="329" key="GridCell.Tab.1.center/0.23.1620.1027@0.23.1620.1027" timestamp="1598983771358" />
+    <state width="1358" height="329" key="GridCell.Tab.1.center/0.23.1620.1027@0.23.1620.1027" timestamp="1598984147774" />
     <state width="1358" height="329" key="GridCell.Tab.1.center/0.23.1622.1027@0.23.1622.1027" timestamp="1598976949882" />
-    <state width="1358" height="329" key="GridCell.Tab.1.left" timestamp="1598983771358">
+    <state width="1358" height="329" key="GridCell.Tab.1.left" timestamp="1598984147774">
       <screen x="0" y="23" width="1620" height="1027" />
     </state>
-    <state width="1358" height="329" key="GridCell.Tab.1.left/0.23.1620.1027@0.23.1620.1027" timestamp="1598983771358" />
+    <state width="1358" height="329" key="GridCell.Tab.1.left/0.23.1620.1027@0.23.1620.1027" timestamp="1598984147774" />
     <state width="1358" height="329" key="GridCell.Tab.1.left/0.23.1622.1027@0.23.1622.1027" timestamp="1598976949882" />
-    <state width="1358" height="329" key="GridCell.Tab.1.right" timestamp="1598983771358">
+    <state width="1358" height="329" key="GridCell.Tab.1.right" timestamp="1598984147774">
       <screen x="0" y="23" width="1620" height="1027" />
     </state>
-    <state width="1358" height="329" key="GridCell.Tab.1.right/0.23.1620.1027@0.23.1620.1027" timestamp="1598983771358" />
+    <state width="1358" height="329" key="GridCell.Tab.1.right/0.23.1620.1027@0.23.1620.1027" timestamp="1598984147774" />
     <state width="1358" height="329" key="GridCell.Tab.1.right/0.23.1622.1027@0.23.1622.1027" timestamp="1598976949882" />
     <state x="414" y="254" key="RollbackChangesDialog" timestamp="1598982366173">
       <screen x="0" y="23" width="1620" height="1027" />
@@ -260,10 +258,10 @@
       <screen x="0" y="23" width="1622" height="1027" />
     </state>
     <state x="213" y="143" width="1200" height="787" key="com.android.tools.idea.avdmanager.AvdListDialog/0.23.1622.1027@0.23.1622.1027" timestamp="1598889701124" />
-    <state x="483" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1598944655646">
+    <state x="483" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1598984584422">
       <screen x="0" y="23" width="1622" height="1027" />
     </state>
-    <state x="483" y="369" key="com.intellij.ide.util.TipDialog/0.23.1622.1027@0.23.1622.1027" timestamp="1598944655646" />
+    <state x="483" y="369" key="com.intellij.ide.util.TipDialog/0.23.1622.1027@0.23.1622.1027" timestamp="1598984584422" />
     <state x="334" y="279" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1598979988247">
       <screen x="0" y="23" width="1620" height="1027" />
     </state>
@@ -275,7 +273,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/ranjeetwaje/wealthmanagement/viewmodel/WealthManagementViewModel.kt</url>
-          <line>147</line>
+          <line>150</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
