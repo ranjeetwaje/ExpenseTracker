@@ -13,9 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.ranjeetwaje.wealthmanagement.R
 import com.ranjeetwaje.wealthmanagement.adapter.ExpenseListAdapter
-import com.ranjeetwaje.wealthmanagement.database.AppDataBase
-import com.ranjeetwaje.wealthmanagement.database.WealthManagementDao
-import com.ranjeetwaje.wealthmanagement.database.WealthManagementEntity
+import com.ranjeetwaje.wealthmanagement.database.*
 import com.ranjeetwaje.wealthmanagement.databinding.FragmentHomeBinding
 import com.ranjeetwaje.wealthmanagement.repository.WealthManagementRepository
 import com.ranjeetwaje.wealthmanagement.viewmodel.WealthManagementViewModel
@@ -32,9 +30,15 @@ class HomeFragment : Fragment() {
     private val dao: WealthManagementDao by lazy {
         AppDataBase.getInstance(this.context).wealthManagementDao
     }
+    private val categoryDao: CategoryDao by lazy {
+        AppDataBase.getInstance(this.context).categoryDao
+    }
+    private val transactionTypeDao: TransactionTypeDao by lazy {
+        AppDataBase.getInstance(this.context).transactionTypeDao
+    }
 
     private val repository: WealthManagementRepository by lazy {
-        WealthManagementRepository(dao)
+        WealthManagementRepository(dao, categoryDao, transactionTypeDao)
     }
 
     private val wealthManagementViewModel: WealthManagementViewModel by lazy {
@@ -64,10 +68,10 @@ class HomeFragment : Fragment() {
         binding.recyclerview.layoutManager = LinearLayoutManager(this.context)
         adapter = ExpenseListAdapter { selectedItem : WealthManagementEntity -> listItemClicked(selectedItem)}
         binding.recyclerview.adapter = adapter
-        displayKiranaList()
+        displayExpenseList()
     }
 
-    private fun displayKiranaList() {
+    private fun displayExpenseList() {
         wealthManagementViewModel.expenseList.observe(this.viewLifecycleOwner, Observer {
             adapter.setList(it)
             adapter.notifyDataSetChanged()

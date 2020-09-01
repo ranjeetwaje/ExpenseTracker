@@ -12,62 +12,136 @@
         tools:context=".ui.IncomeExpenseFragment">
 
 
-        <EditText
-            android:id="@+id/et_expense_income_place"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="16dp"
-            android:ems="10"
-            android:hint="Enter Place of Expense / Income"
-            android:inputType="textPersonName"
-            android:text="@={viewModel.expensePlace}"
-            app:layout_constraintBottom_toTopOf="@+id/et_type"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/et_type"
+        <Button
+            android:id="@+id/add_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="16dp"
-            android:ems="10"
-            android:hint="Enter Type: Expense/Income"
-            android:inputType="textPersonName"
-            android:text="@={viewModel.expenseType}"
-            app:layout_constraintBottom_toTopOf="@+id/et_amount"
+            android:layout_marginBottom="108dp"
+            android:onClick="@{() -> viewModel.insert()}"
+            android:text="Add Expense/Income"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
 
         <EditText
             android:id="@+id/et_amount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="24dp"
             android:ems="10"
             android:hint="Enter Expense/Income Amount"
             android:inputType="numberDecimal"
             android:text="@={viewModel.expenseAmount}"
-            app:layout_constraintBottom_toTopOf="@+id/add_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category_spinner" />
 
-        <Button
-            android:id="@+id/add_button"
+        <RadioGroup
+            android:id="@+id/type_radio_group"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="horizontal"
+            android:paddingRight="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/expense_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@={viewModel.expenseRadioChecked}"
+                android:layout_marginRight="10dp"
+                android:text="Expense" />
+
+            <RadioButton
+                android:id="@+id/income_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@={viewModel.incomeRadioChecked}"
+                android:layout_marginLeft="10dp"
+                android:text="Income" />
+
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/category_spinner"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="#EA1F1F"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type_radio_group" />
+
+        <Spinner
+            android:id="@+id/transaction_type_spinner"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="#EA1F1F"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_amount" />
+
+        <EditText
+            android:id="@+id/date_editText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="300dp"
-            android:text="Add Expense/Income"
-            android:onClick="@{() -> viewModel.insert()}"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:ems="10"
+            android:hint="Select Date"
+            android:inputType="date"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/transaction_type_spinner" />
+
+        <CalendarView
+            android:id="@+id/calendarView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_editText" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Enter Note"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/add_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_editText" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
