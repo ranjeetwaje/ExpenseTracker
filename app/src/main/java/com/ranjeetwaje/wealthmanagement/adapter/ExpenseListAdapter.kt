@@ -1,5 +1,6 @@
 package com.ranjeetwaje.wealthmanagement.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -40,6 +41,11 @@ class MyViewHolder(var binding: ListItemViewBinding): RecyclerView.ViewHolder(bi
     fun bind(wealthManagementEntity: WealthManagementEntity, clickListener: (WealthManagementEntity) -> Unit) {
         binding.categoryTextView.text = wealthManagementEntity.category
         binding.expenseTypeTextView.text = wealthManagementEntity.expenseType
+        if (wealthManagementEntity.expenseType == "Income") {
+            binding.expenseTypeTextView.setTextColor(Color.GREEN)
+        } else {
+            binding.expenseTypeTextView.setTextColor(Color.RED)
+        }
         binding.amountTransactionTypeDateTextview.text = "Rs."+ wealthManagementEntity.expenseAmount + " by " +
                 wealthManagementEntity.transactionType + " on " + wealthManagementEntity.expenseDate
         binding.noteTextView.text = wealthManagementEntity.note
