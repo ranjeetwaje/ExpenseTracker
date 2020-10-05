@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.ranjeetwaje.wealthmanagement.ui.LandingPageFragment
 
 internal class TabFragmentAdapter (
     var context: Context,
@@ -14,13 +15,13 @@ internal class TabFragmentAdapter (
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> {
-                Fragment()
+                LandingPageFragment("Month")
             }
             1 -> {
-                Fragment()
+                LandingPageFragment("Week")
             }
             2 -> {
-                Fragment()
+                LandingPageFragment("Day")
             }
             else -> getItem(position)
         }
