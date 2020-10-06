@@ -49,12 +49,12 @@ class SignUpFragment : Fragment() {
         }
 
         binding.loginButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
+//            it.findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
         }
 
         signUpViewModel.isCreatedSuccessfully.observe(this.viewLifecycleOwner, Observer {
             if (it) {
-                view?.findNavController()?.navigate(R.id.action_signUpFragment_to_loginFragment)
+//                view?.findNavController()?.navigate(R.id.action_signUpFragment_to_loginFragment)
                 Toast.makeText(this.context, "User created successfully", Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(this.context, "Failed to create a user. Please try again.", Toast.LENGTH_LONG).show()

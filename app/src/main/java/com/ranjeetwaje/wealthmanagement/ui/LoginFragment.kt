@@ -48,16 +48,16 @@ class LoginFragment : Fragment() {
         val preferences = activity?.applicationContext?.let { customPreference(it, CUSTOM_PREF_NAME) }
 
         if (preferences?.isUserLoggedIn!!) {
-            this.findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+//            this.findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
         }
 
         binding.signupButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
+//            it.findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
         }
 
         signUpViewModel.isUserExists.observe(this.viewLifecycleOwner, Observer { userExists ->
             if (userExists) {
-                this.view?.findNavController()?.navigate(R.id.action_loginFragment_to_mainFragment)
+//                this.view?.findNavController()?.navigate(R.id.action_loginFragment_to_mainFragment)
             } else {
                 Toast.makeText(this.context, "User is unavailable. Please create user by clicking on SignUp button.", Toast.LENGTH_LONG).show()
             }

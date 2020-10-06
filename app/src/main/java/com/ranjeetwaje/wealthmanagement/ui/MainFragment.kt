@@ -30,23 +30,23 @@ class MainFragment : Fragment() {
     ): View? {
 
         val view: View = inflater.inflate(R.layout.fragment_main, container, false)
-        tabLayout = view.findViewById(R.id.tabLayout)
-        viewPager = view.findViewById(R.id.viewPager)
-        tabLayout.addTab(tabLayout.newTab().setText("Month"))
-        tabLayout.addTab(tabLayout.newTab().setText("Week"))
-        tabLayout.addTab(tabLayout.newTab().setText("Day"))
-        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
-        val adapter = TabFragmentAdapter(this.requireContext(), this.fragmentManager!!,
-            tabLayout.tabCount)
-        viewPager.adapter = adapter
-        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
-        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                viewPager.currentItem = tab.position
-            }
-            override fun onTabUnselected(tab: TabLayout.Tab) {}
-            override fun onTabReselected(tab: TabLayout.Tab) {}
-        })
+//        tabLayout = view.findViewById(R.id.tabLayout)
+//        viewPager = view.findViewById(R.id.viewPager)
+//        tabLayout.addTab(tabLayout.newTab().setText("Month"))
+//        tabLayout.addTab(tabLayout.newTab().setText("Week"))
+//        tabLayout.addTab(tabLayout.newTab().setText("Day"))
+//        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
+//        val adapter = TabFragmentAdapter(this.requireContext(), this.fragmentManager!!,
+//            tabLayout.tabCount)
+//        viewPager.adapter = adapter
+//        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
+//        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+//            override fun onTabSelected(tab: TabLayout.Tab) {
+//                viewPager.currentItem = tab.position
+//            }
+//            override fun onTabUnselected(tab: TabLayout.Tab) {}
+//            override fun onTabReselected(tab: TabLayout.Tab) {}
+//        })
 
         return view
     }
